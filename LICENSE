@@ -1,6 +1,31 @@
-MIT License
+MIT License / Licenza MIT
 
-Copyright (c) 2025 Marcos Javier Martínez Ramos
+Copyright (c) 2025 ASOCIACIÓN GALEGA DE AXEDRECISTAS (AGAX)
+Registration Number / Número de inscrición: 88.357 (Ministry of Interior Registry / Rexistro do Ministerio de Interior, September 1, 1989 / 1 de setembro de 1989)
+Non-profit association / Asociación sen ánimo de lucro
+Tax ID / CIF: G-15228844
+
+---
+
+## Aviso sobre contido visual / Notice about visual content
+
+### Galego
+
+Este repositorio contén código HTML da web de AGAX. As imaxes incluídas están suxeitas a dereitos de autor e dereitos de imaxe, e **non poden ser reutilizadas, modificadas nin distribuídas** sen autorización expresa da Asociación Galega de Axedrecistas.
+
+**Licenza do código:** MIT  
+**Licenza das imaxes e contido visual:** CC BY-NC-ND 4.0
+
+### English
+
+This repository contains HTML code for the AGAX website. The included images are subject to copyright and image rights, and **cannot be reused, modified, or distributed** without express authorization from the Asociación Galega de Axedrecistas.
+
+**Code license:** MIT  
+**Images and visual content license:** CC BY-NC-ND 4.0
+
+---
+
+## English
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +44,25 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Galego
+
+Concédese permiso, de balde, a calquera persoa que obteña unha copia deste
+software e dos ficheiros de documentación asociados (o "Software"), para
+traballar co Software sen restricións, incluíndo sen limitación os dereitos
+de usar, copiar, modificar, fusionar, publicar, distribuír, sublicenciar e/ou
+vender copias do Software, e para permitir ás persoas ás que se lles
+proporcione o Software facelo, suxeito ás seguintes condicións:
+
+O aviso de copyright anterior e este aviso de permiso incluiranse en todas
+as copias ou partes substanciais do Software.
+
+O SOFTWARE PROPORCIÓNASE "TAL COMO ESTÁ", SEN GARANTÍA DE NINGÚN TIPO, EXPRESA
+OU IMPLÍCITA, INCLUÍDAS PERO NON LIMITADAS ÁS GARANTÍAS DE COMERCIALIZACIÓN,
+IDONEIDADE PARA UN FIN PARTICULAR E NON INFRACCIÓN. EN NINGÚN CASO OS AUTORES
+OU TITULARES DO COPYRIGHT SERÁN RESPONSABLES DE NINGUNHA RECLAMACIÓN, DANOS OU
+OUTRAS RESPONSABILIDADES, XA SEXA NUNHA ACCIÓN CONTRACTUAL, EXTRACONTRACTUAL
+OU DOUTRA FORMA, QUE XURDA DE, FÓRA DE OU EN CONEXIÓN CO SOFTWARE OU O USO
+OU OUTRAS TRANSACCIÓNS NO SOFTWARE.
