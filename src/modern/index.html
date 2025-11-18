@@ -84,36 +84,48 @@
 
         <!-- Main Content Area -->
         <section class="content-main">
-            <!-- Tabs Navigation -->
-            <div class="tabs-container">
-                <div class="tabs-nav">
-                    <button class="tab-button active" data-tab="actualidad">
-                        <span class="tab-icon">📰</span>
-                        Actualidad AGAX
-                    </button>
-                    <button class="tab-button" data-tab="xogando">
-                        <span class="tab-icon">♟️</span>
-                        Xogando co Xadrez
-                    </button>
-                    <button class="tab-button" data-tab="torneos">
-                        <span class="tab-icon">🏆</span>
-                        Torneos
-                    </button>
-                    <button class="tab-button" data-tab="torneos-online">
-                        <span class="tab-icon">♘</span>
-                        Torneos Online
-                    </button>
-                </div>
-
-                <!-- Tab Content -->
-                <div class="tabs-content">
-                    <div class="tab-panel active" id="actualidad">
-                        <div class="iframe-container">
-                            <iframe src="https://agaxnet.blogspot.com/" 
-                                    title="Blog Actualidad AGAX"
-                                    frameborder="0"
-                                    loading="lazy">
-                            </iframe>
+            <!-- Unified Blog Container -->
+            <div class="unified-container">
+                        <div class="blog-container" id="blog-posts">
+                            <div class="blog-header">
+                                <!-- Buscador -->
+                                <div class="search-filters">
+                                    <div class="search-box">
+                                        <input type="text" 
+                                               id="search-title" 
+                                               placeholder="🔍 Buscar por título..."
+                                               class="search-input">
+                                    </div>
+                                    <div class="date-filters">
+                                        <input type="date" 
+                                               id="search-date-from" 
+                                               class="date-input"
+                                               placeholder="Desde">
+                                        <span>-</span>
+                                        <input type="date" 
+                                               id="search-date-to" 
+                                               class="date-input"
+                                               placeholder="Ata">
+                                    </div>
+                                    <div class="blog-chips">
+                                        <button class="blog-chip" data-blog="novas" style="background-color: #006699;">Novas</button>
+                                        <button class="blog-chip" data-blog="agaxnet" style="background-color: #0099CC;">agax.net</button>
+                                        <button class="blog-chip" data-blog="xogando" style="background-color: #00AA66;">Xogando</button>
+                                        <button class="blog-chip" data-blog="xadrecista" style="background-color: #CC6600;">Xadrecistas</button>
+                                    </div>
+                                    <button id="clear-filters" class="btn-clear" title="Limpar filtros">✖ Limpar</button>
+                                </div>
+                            </div>
+                            <div class="posts-grid" id="posts-grid">
+                                <!-- Posts will be loaded here via JavaScript -->
+                            </div>
+                            <div class="loading-indicator" id="loading-indicator">
+                                <div class="spinner"></div>
+                                <p>Cargando máis publicacións...</p>
+                            </div>
+                            <div class="end-message hidden" id="end-message">
+                                <p>Non hai máis publicacións para mostrar</p>
+                            </div>
                         </div>
                     </div>
 
@@ -136,17 +148,6 @@
                             </iframe>
                         </div>
                     </div>
-
-                    <div class="tab-panel" id="torneos-online">
-                        <div class="iframe-container">
-                            <iframe src="http://www.agax.net" 
-                                    title="Torneos Online AGAX"
-                                    frameborder="0"
-                                    loading="lazy">
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -158,10 +159,27 @@
                     <li><a href="http://www.agax.net" target="_blank">Xadrez Online</a></li>
                     <li><a href="../arquivos/arquivo.htm" target="_blank">Arquivos</a></li>
                     <li><a href="../pdfs/estatutos%20agax.pdf" target="_blank">Estatutos</a></li>
-                </ul>
+                </div>
             </div>
         </aside>
     </main>
+
+    <!-- Modal para mostrar post completo -->
+    <div id="post-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <div class="modal-meta">
+                    <span id="modal-date"></span>
+                </div>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Contenido del post -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -176,5 +194,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="blog-loader-multi.js"></script>
 </body>
 </html>
