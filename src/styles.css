@@ -345,7 +345,7 @@ a:hover {
     }
 }
 
-/* Mobile - Small (mover abajo solo aquí) */
+/* Mobile - Small */
 @media (max-width: 768px) {
     .main-container {
         grid-template-columns: 1fr;
@@ -373,10 +373,7 @@ a:hover {
     .sponsor-logos img {
         max-width: 200px;
     }
-}
-
-/* Mobile - Small */
-@media (max-width: 768px) {
+    
     .footer-links {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
@@ -393,7 +390,7 @@ a:hover {
     }
     
     .title-section h1 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     
     .domains {
@@ -403,13 +400,6 @@ a:hover {
     
     .domain {
         font-size: 1.2rem;
-    }
-}
-
-/* Mobile - Small */
-@media (max-width: 768px) {
-    .title-section h1 {
-        font-size: 1.1rem;
     }
     
     .iframe-container {
