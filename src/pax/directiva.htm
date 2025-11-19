@@ -1,223 +1,229 @@
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-
-xmlns:o="urn:schemas-microsoft-com:office:office"
-
-xmlns:w="urn:schemas-microsoft-com:office:word"
-
-xmlns="http://www.w3.org/TR/REC-html40">
-
-
-
+<!DOCTYPE html>
+<html lang="gl">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="description" content="Xunta Directiva - AGAX">
+    <meta name="keywords" content="xadrez, ajedrez, Galicia, directiva, AGAX">
+    <title>Xunta Directiva - AGAX</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/x-icon" href="../agax.ico">
+    <style>
+        .directiva-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+        
+        .directiva-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-xl);
+            background: linear-gradient(135deg, var(--agax-blue) 0%, var(--agax-dark-blue) 100%);
+            border-radius: 10px;
+            color: var(--agax-white);
+        }
+        
+        .directiva-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--agax-white);
+        }
+        
+        .directiva-intro {
+            background: var(--agax-white);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .directiva-intro p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--agax-dark-blue);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .miembros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .miembro-card {
+            background: var(--agax-white);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .miembro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .miembro-cargo {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--agax-blue);
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .miembro-nombre {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--agax-dark-blue);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: var(--spacing-xl) 0;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: var(--agax-blue);
+            color: var(--agax-white);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: var(--agax-dark-blue);
+        }
+        
+        @media (max-width: 768px) {
+            .directiva-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .miembros-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-main">
+            <div class="logo-section">
+                <a href="../index.html">
+                    <img src="../imax/logoagax01.gif" alt="Logo AGAX" class="logo-small">
+                </a>
+            </div>
+            
+            <div class="title-section">
+                <h1>ASOCIACIÓN GALEGA DE XADRECISTAS</h1>
+                <p class="anniversary">1989-2025. XXXVI Aniversario.</p>
+                <div class="domains">
+                    <a href="https://www.xadrez.gal" class="domain">xadrez.gal</a>
+                    <span class="separator">|</span>
+                    <a href="https://www.agax.org" class="domain">agax.org</a>
+                </div>
+            </div>
+            
+            <div class="banner-section">
+                <img src="../imax/agax.gif" alt="Banner AGAX" class="banner">
+            </div>
+        </div>
+        
+        <div class="header-bottom">
+            <nav class="bottom-nav">
+                <span class="nav-highlight">●</span>
+                <a href="https://www.xogandocoxadrez.eu" target="_blank">Novidades en xogando co xadrez</a>
+                <span class="separator">●</span>
+                <a href="https://www.xadrecista.eu" target="_blank">Torneos en xadrecista.eu</a>
+                <span class="separator">●</span>
+                <a href="https://www.agax.net" target="_blank">Xadrez en liña en agax.net</a>
+                <span class="separator">●</span>
+            </nav>
+        </div>
+    </header>
 
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <!-- Main Content -->
+    <main class="directiva-container">
+        <a href="../index.html" class="back-link">← Volver á páxina principal</a>
+        
+        <div class="directiva-header">
+            <h1>Xunta Directiva</h1>
+        </div>
+        
+        <div class="directiva-intro">
+            <p><strong>Na Asemblea Extraordinaria de AGAX celebrada o trinta e un de agosto de 2025, adoptáronse os seguintes acordos por unanimidade dos presentes:</strong></p>
+            <p><strong>Primeiro.- Renovación da XUNTA DIRECTIVA. Cesan os actuais e queda constituída así:</strong></p>
+        </div>
+        
+        <div class="miembros-grid">
+            <div class="miembro-card">
+                <div class="miembro-cargo">Presidente</div>
+                <div class="miembro-nombre">Luis Rodríguez Díaz</div>
+            </div>
+            
+            <div class="miembro-card">
+                <div class="miembro-cargo">Vicepresidente</div>
+                <div class="miembro-nombre">Francisco Javier García Veiras</div>
+            </div>
+            
+            <div class="miembro-card">
+                <div class="miembro-cargo">Secretario</div>
+                <div class="miembro-nombre">Manuel Andión Muinelo</div>
+            </div>
+            
+            <div class="miembro-card">
+                <div class="miembro-cargo">Tesoureiro</div>
+                <div class="miembro-nombre">Marcos Javier Martínez Ramos</div>
+            </div>
+            
+            <div class="miembro-card">
+                <div class="miembro-cargo">Vocal</div>
+                <div class="miembro-nombre">Daniel Codesido Sánchez</div>
+            </div>
+            
+            <div class="miembro-card">
+                <div class="miembro-cargo">Vocal</div>
+                <div class="miembro-nombre">Pablo Furelos Diéguez</div>
+            </div>
+        </div>
+    </main>
 
-<meta name=ProgId content=FrontPage.Editor.Document>
-
-<meta name=Generator content="Microsoft FrontPage 5.0">
-
-<meta name=Originator content="Microsoft Word 9">
-
-<link rel=Edit-Time-Data href="./sauda2_archivos/editdata.mso">
-
-<title>directiva</title>
-
-<!--[if gte mso 9]><xml>
-
- <w:WordDocument>
-
-  <w:HyphenationZone>21</w:HyphenationZone>
-
- </w:WordDocument>
-
-</xml><![endif]-->
-
-<style>
-
-<!--
-
- /* Style Definitions */
-
-p.MsoNormal, li.MsoNormal, div.MsoNormal
-
-	{mso-style-parent:"";
-
-	margin-bottom:.0001pt;
-
-	mso-pagination:widow-orphan;
-
-	font-size:12.0pt;
-
-	font-family:"Times New Roman";
-
-	mso-fareast-font-family:"Times New Roman";
-
-	color:yellow; margin-left:0cm; margin-right:0cm; margin-top:0cm}
-
-a:link, span.MsoHyperlink
-
-	{color:yellow;
-
-	text-decoration:underline;
-
-	text-underline:single;}
-
-a:visited, span.MsoHyperlinkFollowed
-
-	{color:yellow;
-
-	text-decoration:underline;
-
-	text-underline:single;}
-
-p
-
-	{margin-right:0cm;
-
-	mso-margin-top-alt:auto;
-
-	mso-margin-bottom-alt:auto;
-
-	margin-left:0cm;
-
-	mso-pagination:widow-orphan;
-
-	font-size:12.0pt;
-
-	font-family:"Times New Roman";
-
-	mso-fareast-font-family:"Times New Roman";
-
-	color:yellow;}
-
-@page Section1
-
-	{size:595.3pt 841.9pt;
-
-	margin:70.85pt 3.0cm 70.85pt 3.0cm;
-
-	mso-header-margin:35.4pt;
-
-	mso-footer-margin:35.4pt;
-
-	mso-paper-source:0;}
-
-div.Section1
-
-	{page:Section1;}
-</style>
-<base target="_self">
-<body background="../imax/fondopedra.gif">
-
-
-
-        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1" height="437">
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="80%" height="19">&nbsp;</td>
-            <td width="5%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" background="../imax/agaxbarra.gif" height="19">&nbsp;</td>
-            <td width="80%" background="../imax/agaxbarra.gif" height="19">&nbsp;</td>
-            <td width="5%" background="../imax/agaxbarra.gif" height="19">&nbsp;</td>
-            <td width="8%" background="../imax/agaxbarra.gif" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="80%" height="19">&nbsp;</td>
-            <td width="5%" rowspan="8" height="152">
-            <p align="center">
-            <img border="0" src="../imax/agaxpedra.GIF" width="107" height="144"></td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="80%" rowspan="4" height="76"><b>            <font face="Verdana" size="6" color="#0099FF">Xunta Directiva</font></b></td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="80%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="80%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="80%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" background="../imax/agaxbarra.gif" height="19">&nbsp;</td>
-            <td width="80%" background="../imax/agaxbarra.gif" height="19">&nbsp;</td>
-            <td width="5%" background="../imax/agaxbarra.gif" height="19">&nbsp;</td>
-            <td width="8%" background="../imax/agaxbarra.gif" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="80%" height="19">&nbsp;</td>
-            <td width="5%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="8%" height="19">
-  <p align="justify"><b><font face="Verdana" size="2" color="#000080">Na Asemblea 
-  Extraordinaria de AGAX celebrada o trinta e un de agosto de 2025, adoptáronse os seguintes 
-  acordos por unanimidade dos presentes:</font><o:p></o:p></b></p>
-  <p align="justify"><b><font face="Verdana" size="2" color="#000080">Primeiro.- Renovación da XUNTA DIRECTIVA. Cesan os actuais e queda constituída así:</font></b></p>
-  <p><b><font size="2" color="#000080" face="Verdana">Presidente: Luis Rodríguez Díaz</font></b></p>
-  <p><b><font face="Verdana" size="2" color="#000080">Vicepresidente: Francisco Javier García Veiras</font></b></p>
-  <p><font color="#000080"><b><font face="Verdana" size="2">Secretario: Manuel Andión Muinelo</font></b></font></p>
-  <p><font color="#000080"><b><font face="Verdana" size="2">Tesoureiro: Marcos Javier Martínez Ramos</font></b></font></p>
-  <p><b><font size="2" face="Verdana" color="#000080">Vocal: Daniel Codesido Sánchez</font></b></p>
-  <p><b><font size="2" face="Verdana" color="#000080">Vocal: Pablo Furelos Diéguez</font></b></p>
-
-            </td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="8%" height="19">
-
-&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="80%" height="19">&nbsp;</td>
-            <td width="5%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19" background="../imax/agaxbarra.gif">&nbsp;</td>
-            <td width="80%" height="19" background="../imax/agaxbarra.gif">&nbsp;</td>
-            <td width="5%" height="19" background="../imax/agaxbarra.gif">&nbsp;</td>
-            <td width="8%" height="19" background="../imax/agaxbarra.gif">&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="7%" height="19">&nbsp;</td>
-            <td width="80%" height="19">&nbsp;</td>
-            <td width="5%" height="19">&nbsp;</td>
-            <td width="8%" height="19">&nbsp;</td>
-          </tr>
-</table>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <a href="directiva.htm">Directiva</a>
+                    <a href="../pdfs/estatutos%20agax.pdf" target="_blank">Estatutos</a>
+                    <a href="../arquivos/arquivo.htm" target="_blank">Arquivos Antigos</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <a href="mailto:correo@agax.org?subject=Contacto dende a web">correo@agax.org</a>
+                    <a href="http://eepurl.com/chIhNH" target="_blank">Subscribirse á lista de correo</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <a href="https://www.instagram.com/xadrecistas" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/xadrecistas" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/xadrecistas" target="_blank">Twitter</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <p class="legal-text">© 2025 ASOCIACIÓN GALEGA DE XADRECISTAS</p>
+                    <p class="legal-text">@xadrecistas</p>
+                    <p class="legal-text">Número de inscrición: 88.357</p>
+                    <p class="legal-text">Rexistro do Ministerio de Interior</p>
+                    <p class="legal-text">1 de setembro de 1989</p>
+                    <p class="legal-text">Asociación sen ánimo de lucro</p>
+                    <p class="legal-text">CIF: G-15228844</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
