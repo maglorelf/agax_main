@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="description" content="Asociación Galega de Xadrecistas - AGAX">
+    <meta name="keywords" content="xadrez, ajedrez, Galicia, ajedrecistas, xadrecistas, AGAX">
+    <title>AGAX - Asociación Galega de Xadrecistas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="agax.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-main">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="imax/logoagax01.gif" alt="Logo AGAX" class="logo-small">
+                </a>
+            </div>
+            
+            <div class="title-section">
+                <h1>ASOCIACIÓN GALEGA DE XADRECISTAS</h1>
+                <p class="anniversary">1989-2025. XXXVI Aniversario.</p>
+                <div class="domains">
+                    <a href="https://www.xadrez.gal" class="domain">xadrez.gal</a>
+                    <span class="separator">|</span>
+                    <a href="https://www.agax.org" class="domain">agax.org</a>
+                </div>
+            </div>
+            
+            <div class="banner-section">
+                <img src="imax/agax.gif" alt="Banner AGAX" class="banner">
+            </div>
+        </div>
+        
+        <div class="header-bottom">
+            <nav class="bottom-nav">
+                <span class="nav-highlight">●</span>
+                <a href="https://www.xogandocoxadrez.eu" target="_blank">Novidades en xogando co xadrez</a>
+                <span class="separator">●</span>
+                <a href="https://www.xadrecista.eu" target="_blank">Torneos en xadrecista.eu</a>
+                <span class="separator">●</span>
+                <a href="https://www.agax.net" target="_blank">Xadrez en liña en agax.net</a>
+                <span class="separator">●</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Main Content Area -->
+        <section class="content-main">
+            <div class="blog-container" id="blog-posts">
+                <div class="blog-header">
+                    <div class="search-filters">
+                        <div class="search-box">
+                            <input type="text" 
+                                   id="search-title" 
+                                   placeholder="🔍 Buscar por título..."
+                                   class="search-input">
+                        </div>
+                        <div class="date-filters">
+                            <input type="date" 
+                                   id="search-date-from" 
+                                   class="date-input"
+                                   placeholder="Desde">
+                            <span>-</span>
+                            <input type="date" 
+                                   id="search-date-to" 
+                                   class="date-input"
+                                   placeholder="Ata">
+                        </div>
+                        <div class="blog-chips">
+                            <button class="blog-chip chip-novas" data-blog="novas">NOVAS</button>
+                            <button class="blog-chip chip-agaxnet" data-blog="agaxnet">AGAX.NET</button>
+                            <button class="blog-chip chip-xogando" data-blog="xogando">XOGANDO CO XADREZ</button>
+                            <button class="blog-chip chip-xadrecista" data-blog="xadrecista">XADRECISTAS</button>
+                        </div>
+                        <button id="clear-filters" class="btn-clear" title="Limpar filtros">✖ Limpar</button>
+                    </div>
+                </div>
+                <div class="posts-grid" id="posts-grid">
+                    <!-- Posts will be loaded here via JavaScript -->
+                </div>
+                <div class="loading-indicator" id="loading-indicator">
+                    <div class="spinner"></div>
+                    <p>Cargando máis publicacións...</p>
+                </div>
+                <div class="end-message hidden" id="end-message">
+                    <p>Non hai máis publicacións para mostrar</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidebar Right -->
+        <aside class="sidebar-right">
+            <div class="sponsors">
+                <h3>Entidades colaboradoras</h3>
+                <div class="sponsor-logos">
+                    <a href="https://www.coruna.gal/deportes" target="_blank">
+                        <img src="imax/concecoru.png" alt="Concello da Coruña">
+                    </a>
+                    <img src="imax/Depuok.png" alt="Deputación da Coruña">
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Modal para mostrar post completo -->
+    <div id="post-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <div class="modal-meta">
+                    <span id="modal-date"></span>
+                </div>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Contenido del post -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <a href="pax/directiva.htm" target="_blank">Directiva</a>
+                    <a href="pdfs/estatutos%20agax.pdf" target="_blank">Estatutos</a>
+                    <a href="arquivos/arquivo.htm" target="_blank">Arquivos Antigos</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <a href="mailto:correo@agax.org?subject=Contacto dende a web">correo@agax.org</a>
+                    <a href="http://eepurl.com/chIhNH" target="_blank">Subscribirse á lista de correo</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <a href="https://www.instagram.com/xadrecistas" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/xadrecistas" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/xadrecistas" target="_blank">Twitter</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <p class="legal-text">© 2025 ASOCIACIÓN GALEGA DE XADRECISTAS</p>
+                    <p class="legal-text">@xadrecistas</p>
+                    <p class="legal-text">Número de inscrición: 88.357</p>
+                    <p class="legal-text">Rexistro do Ministerio de Interior</p>
+                    <p class="legal-text">1 de setembro de 1989</p>
+                    <p class="legal-text">Asociación sen ánimo de lucro</p>
+                    <p class="legal-text">CIF: G-15228844</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog-loader-multi.js"></script>
+</body>
+</html>
