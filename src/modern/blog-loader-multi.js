@@ -16,19 +16,19 @@ class MultiBlogLoader {
             {
                 id: 'agaxnet',
                 name: 'agax.net',
-                url: 'https://www.agax.net',
+                url: 'https://agaxnet.blogspot.com',
                 color: '#0099CC'
             },
             {
                 id: 'xogando',
                 name: 'Xogando co Xadrez',
-                url: 'http://www.xogandocoxadrez.eu',
+                url: 'https://www.xogandocoxadrez.eu',
                 color: '#00AA66'
             },
             {
                 id: 'xadrecista',
                 name: 'Xadrecistas',
-                url: 'http://www.xadrecista.eu',
+                url: 'https://www.xadrecista.eu',
                 color: '#CC6600'
             }
         ];

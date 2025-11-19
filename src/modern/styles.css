@@ -661,6 +661,23 @@ a:hover {
     transform: scale(1.05);
 }
 
+/* Colores específicos por blog */
+.blog-chip.chip-novas {
+    background-color: #006699 !important;
+}
+
+.blog-chip.chip-agaxnet {
+    background-color: #0099CC !important;
+}
+
+.blog-chip.chip-xogando {
+    background-color: #00AA66 !important;
+}
+
+.blog-chip.chip-xadrecista {
+    background-color: #CC6600 !important;
+}
+
 .btn-clear {
     padding: 0.75rem 1.5rem;
     background-color: var(--agax-light-gray);
