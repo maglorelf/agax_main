@@ -52,50 +52,46 @@
     <main class="main-container">
         <!-- Main Content Area -->
         <section class="content-main">
-            <!-- Unified Blog Container -->
-            <div class="unified-container">
-                        <div class="blog-container" id="blog-posts">
-                            <div class="blog-header">
-                                <!-- Buscador -->
-                                <div class="search-filters">
-                                    <div class="search-box">
-                                        <input type="text" 
-                                               id="search-title" 
-                                               placeholder="🔍 Buscar por título..."
-                                               class="search-input">
-                                    </div>
-                                    <div class="date-filters">
-                                        <input type="date" 
-                                               id="search-date-from" 
-                                               class="date-input"
-                                               placeholder="Desde">
-                                        <span>-</span>
-                                        <input type="date" 
-                                               id="search-date-to" 
-                                               class="date-input"
-                                               placeholder="Ata">
-                                    </div>
-                                    <div class="blog-chips">
-                                        <button class="blog-chip chip-novas" data-blog="novas">NOVAS</button>
-                                        <button class="blog-chip chip-agaxnet" data-blog="agaxnet">AGAX.NET</button>
-                                        <button class="blog-chip chip-xogando" data-blog="xogando">XOGANDO CO XADREZ</button>
-                                        <button class="blog-chip chip-xadrecista" data-blog="xadrecista">XADRECISTAS</button>
-                                    </div>
-                                    <button id="clear-filters" class="btn-clear" title="Limpar filtros">✖ Limpar</button>
-                                </div>
-                            </div>
-                            <div class="posts-grid" id="posts-grid">
-                                <!-- Posts will be loaded here via JavaScript -->
-                            </div>
-                            <div class="loading-indicator" id="loading-indicator">
-                                <div class="spinner"></div>
-                                <p>Cargando máis publicacións...</p>
-                            </div>
-                            <div class="end-message hidden" id="end-message">
-                                <p>Non hai máis publicacións para mostrar</p>
-                            </div>
+            <div class="blog-container" id="blog-posts">
+                <div class="blog-header">
+                    <!-- Buscador -->
+                    <div class="search-filters">
+                        <div class="search-box">
+                            <input type="text" 
+                                   id="search-title" 
+                                   placeholder="🔍 Buscar por título..."
+                                   class="search-input">
                         </div>
+                        <div class="date-filters">
+                            <input type="date" 
+                                   id="search-date-from" 
+                                   class="date-input"
+                                   placeholder="Desde">
+                            <span>-</span>
+                            <input type="date" 
+                                   id="search-date-to" 
+                                   class="date-input"
+                                   placeholder="Ata">
+                        </div>
+                        <div class="blog-chips">
+                            <button class="blog-chip chip-novas" data-blog="novas">NOVAS</button>
+                            <button class="blog-chip chip-agaxnet" data-blog="agaxnet">AGAX.NET</button>
+                            <button class="blog-chip chip-xogando" data-blog="xogando">XOGANDO CO XADREZ</button>
+                            <button class="blog-chip chip-xadrecista" data-blog="xadrecista">XADRECISTAS</button>
+                        </div>
+                        <button id="clear-filters" class="btn-clear" title="Limpar filtros">✖ Limpar</button>
                     </div>
+                </div>
+                <div class="posts-grid" id="posts-grid">
+                    <!-- Posts will be loaded here via JavaScript -->
+                </div>
+                <div class="loading-indicator" id="loading-indicator">
+                    <div class="spinner"></div>
+                    <p>Cargando máis publicacións...</p>
+                </div>
+                <div class="end-message hidden" id="end-message">
+                    <p>Non hai máis publicacións para mostrar</p>
+                </div>
             </div>
         </section>
 
