@@ -63,8 +63,8 @@ a:hover {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    padding: var(--spacing-sm) var(--spacing-md);
-    gap: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-md);
+    gap: var(--spacing-sm);
     background-color: var(--agax-blue);
 }
 
@@ -74,7 +74,7 @@ a:hover {
 }
 
 .logo-small {
-    width: 120px;
+    width: 100px;
     height: auto;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -84,16 +84,16 @@ a:hover {
 }
 
 .title-section h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .anniversary {
     color: var(--agax-light-blue);
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
     font-weight: bold;
 }
 
@@ -133,7 +133,7 @@ a:hover {
 /* Header Bottom - Navegación inferior */
 .header-bottom {
     background-color: var(--agax-blue);
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-md);
     border-top: 2px solid var(--agax-light-blue);
 }
 
@@ -676,10 +676,10 @@ a:hover {
 }
 
 .blog-chip {
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1rem;
     border: 2px solid transparent;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: bold;
     color: white;
     cursor: pointer;
