@@ -373,7 +373,6 @@ a:hover {
     .sponsor-logos img {
         max-width: 200px;
     }
-    
     .footer-links {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
