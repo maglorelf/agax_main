@@ -16,7 +16,7 @@ class MultiBlogLoader {
             {
                 id: 'agaxnet',
                 name: 'agax.net',
-                url: 'https://agaxnet.blogspot.com',
+                url: 'https://agax.net',
                 color: '#0099CC'
             },
             {
