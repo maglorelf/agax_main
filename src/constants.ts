@@ -1,6 +1,6 @@
 // This URL is a placeholder. In a real deployment, the user must create a Google Apps Script
 // attached to their Sheet and paste the Web App URL here.
-export const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx...PLACEHOLDER.../exec';
+export const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwV7GmRv8ggXG2oDOtZLtmxXAkAw4NIii3mVd5S3jmrDRBk4Xq4v_ZSVOhBszQtx3VY/exec';
 
 export const LICHESS_TEAM_URL = 'https://lichess.org/team/agax-aberto';
 
