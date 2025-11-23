@@ -10,8 +10,8 @@ interface SuccessStepProps {
 
 export const SuccessStep: React.FC<SuccessStepProps> = ({ formData }) => {
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(`Hola, soy ${formData.fullName} y me he registrado en el formulario web.`);
-    alert("Mensaje copiado al portapapeles");
+    navigator.clipboard.writeText(`Ola, son ${formData.fullName} e rexistreime no formulario web.`);
+    alert("Mensaxe copiada ao portapapeis");
   };
 
   return (
@@ -20,22 +20,22 @@ export const SuccessStep: React.FC<SuccessStepProps> = ({ formData }) => {
         <Check className="w-10 h-10 text-green-600" />
       </div>
       
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">¡Registro Recibido!</h2>
+      <h2 className="text-3xl font-bold text-gray-900 mb-4">Rexistro recibido!</h2>
       
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 text-left max-w-lg mx-auto">
-        <h3 className="font-semibold text-blue-900 mb-2">Siguiente Paso: Lichess</h3>
+        <h3 className="font-semibold text-blue-900 mb-2">Seguinte paso: Lichess</h3>
         <p className="text-blue-800 mb-4 text-sm">
-          Tus datos han sido guardados correctamente. Ahora debes unirte al equipo en Lichess para finalizar el proceso.
+          Os teus datos gardáronse correctamente. Agora debes unirte ao equipo en Lichess para finalizar o proceso.
         </p>
         
         <div className="flex flex-col gap-3">
-           <div className="text-xs text-gray-500 uppercase font-semibold tracking-wider">Tu nombre de usuario</div>
+           <div className="text-xs text-gray-500 uppercase font-semibold tracking-wider">O teu nome de usuario</div>
            <div className="bg-white p-2 rounded border font-mono text-gray-800">{formData.lichessUsername}</div>
         </div>
       </div>
 
       <div className="space-y-4">
-        <p className="text-gray-600 mb-2">Haz clic abajo para ir a la página del equipo:</p>
+        <p className="text-gray-600 mb-2">Fai clic abaixo para acceder á páxina do equipo:</p>
         
         <a 
           href={LICHESS_TEAM_URL} 
@@ -51,14 +51,14 @@ export const SuccessStep: React.FC<SuccessStepProps> = ({ formData }) => {
 
         <div className="mt-8 pt-8 border-t border-gray-200">
            <p className="text-sm text-gray-500 mb-4">
-             Si te piden un mensaje de entrada, puedes copiar esto:
+             Se che piden unha mensaxe de presentación, podes copiar esta:
            </p>
            <button 
              onClick={copyToClipboard}
              className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
            >
              <Copy className="mr-2 h-4 w-4 text-gray-500" />
-             Copiar mensaje de presentación
+             Copiar mensaxe de presentación
            </button>
         </div>
       </div>

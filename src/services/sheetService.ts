@@ -23,10 +23,10 @@ import { GOOGLE_SCRIPT_URL } from '../constants';
 export const submitToGoogleSheet = async (data: UserFormData): Promise<SheetResponse> => {
   // Check if we are using the placeholder URL
   if (GOOGLE_SCRIPT_URL.includes('PLACEHOLDER')) {
-    console.warn("Using Mock Submission: Google Script URL is not configured in constants.ts");
+    console.warn("Usando envío simulado: a URL de Google Script non está configurada en constants.ts");
     // Simulate network delay
     await new Promise(resolve => setTimeout(resolve, 1500));
-    return { result: 'success', message: 'Simulated submission successful' };
+    return { result: 'success', message: 'Envío simulado correcto' };
   }
 
   try {
@@ -56,7 +56,7 @@ export const submitToGoogleSheet = async (data: UserFormData): Promise<SheetResp
     return { result: 'success' };
 
   } catch (error) {
-    console.error("Error submitting to sheet", error);
-    return { result: 'error', message: 'Error de conexión con la hoja de cálculo.' };
+    console.error("Erro ao enviar á folla", error);
+    return { result: 'error', message: 'Erro de conexión coa folla de cálculo.' };
   }
 };

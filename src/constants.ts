@@ -16,7 +16,7 @@ export const INITIAL_FORM_DATA = {
 };
 
 export const STEPS = [
-  { id: 1, title: 'Datos Personales', description: 'Identificación' },
+  { id: 1, title: 'Datos persoais', description: 'Identificación' },
   { id: 2, title: 'Verificación', description: 'Preguntas de control' },
   { id: 3, title: 'Confirmar', description: 'Revisión final' },
 ];

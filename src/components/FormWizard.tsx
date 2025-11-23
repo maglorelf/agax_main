@@ -28,16 +28,16 @@ export const FormWizard: React.FC = () => {
     let isValid = true;
 
     if (step === 1) {
-      if (!formData.fullName.trim()) newErrors.fullName = 'El nombre es obligatorio';
-      if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email inválido';
-      if (!formData.lichessUsername.trim()) newErrors.lichessUsername = 'Usuario de Lichess obligatorio';
-      else if (formData.lichessUsername.includes(' ')) newErrors.lichessUsername = 'El usuario no puede tener espacios';
+      if (!formData.fullName.trim()) newErrors.fullName = 'O nome é obrigatorio';
+      if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Correo electrónico non válido';
+      if (!formData.lichessUsername.trim()) newErrors.lichessUsername = 'Usuario en Lichess obrigatorio';
+      else if (formData.lichessUsername.includes(' ')) newErrors.lichessUsername = 'O usuario non pode ter espazos';
     }
 
-    if (step === 2) {
+     if (step === 2) {
        // Validation for step 2 if needed (e.g. mandatory year)
-       if(!formData.birthYear) newErrors.birthYear = 'El año de nacimiento es obligatorio para categorías';
-    }
+       if(!formData.birthYear) newErrors.birthYear = 'O ano de nacemento é obrigatorio para categorías';
+     }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -67,7 +67,7 @@ export const FormWizard: React.FC = () => {
     if (response.result === 'success') {
       setIsSuccess(true);
     } else {
-      alert(response.message || 'Hubo un error al enviar el formulario.');
+      alert(response.message || 'Produciuse un erro ao enviar o formulario.');
     }
   };
 
@@ -80,7 +80,7 @@ export const FormWizard: React.FC = () => {
       {/* Header / Progress Bar */}
       <div className="bg-gray-50 p-6 border-b border-gray-100">
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-xl font-bold text-gray-800">Alta Equipo Lichess</h1>
+          <h1 className="text-xl font-bold text-gray-800">Alta no equipo de Lichess</h1>
           <span className="text-sm font-medium text-gray-500">Paso {currentStep} de 3</span>
         </div>
         
@@ -102,37 +102,37 @@ export const FormWizard: React.FC = () => {
                 <div className="p-2 bg-blue-100 rounded-lg">
                     <User className="w-6 h-6 text-blue-600" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800">Datos Personales</h2>
+                <h2 className="text-2xl font-bold text-gray-800">Datos persoais</h2>
             </div>
             
             <div className="grid gap-5">
               <Input
-                label="Nombre Completo"
+                label="Nome completo"
                 name="fullName"
-                placeholder="Ej. Magnus Carlsen"
+                placeholder="Ex. Magnus Carlsen"
                 value={formData.fullName}
                 onChange={handleChange}
                 error={errors.fullName}
               />
               <Input
-                label="Correo Electrónico"
+                label="Correo electrónico"
                 name="email"
                 type="email"
-                placeholder="ejemplo@email.com"
+                placeholder="exemplo@email.com"
                 value={formData.email}
                 onChange={handleChange}
                 error={errors.email}
               />
               <Input
-                label="Usuario de Lichess"
+                label="Usuario en Lichess"
                 name="lichessUsername"
-                placeholder="Ej. DrNykterstein"
+                placeholder="Ex. DrNykterstein"
                 value={formData.lichessUsername}
                 onChange={handleChange}
                 error={errors.lichessUsername}
               />
               <p className="text-xs text-gray-500 -mt-3">
-                Es crucial que sea exacto para poder admitirte en el equipo.
+                É crucial que sexa exacto para poder admitirte no equipo.
               </p>
             </div>
           </div>
@@ -145,23 +145,23 @@ export const FormWizard: React.FC = () => {
                 <div className="p-2 bg-purple-100 rounded-lg">
                     <ShieldCheck className="w-6 h-6 text-purple-600" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800">Control & Verificación</h2>
+                <h2 className="text-2xl font-bold text-gray-800">Control e verificación</h2>
             </div>
 
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
-                 <Input
-                    label="Año de Nacimiento"
+                  <Input
+                    label="Ano de nacemento"
                     name="birthYear"
                     type="number"
                     placeholder="YYYY"
                     value={formData.birthYear}
                     onChange={handleChange}
                     error={errors.birthYear}
-                 />
+                  />
                  <div className="mb-4">
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      ¿Eres socio de AGAX?
+                      ¿És socio de AGAX?
                     </label>
                     <select
                       name="isAgaxMember"
@@ -169,9 +169,9 @@ export const FormWizard: React.FC = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     >
-                      <option value="No">No</option>
-                      <option value="Yes">Sí</option>
-                      <option value="Processing">En trámite</option>
+                      <option value="No">Non</option>
+                      <option value="Yes">Si</option>
+                      <option value="Processing">En tramitación</option>
                     </select>
                  </div>
               </div>
@@ -186,13 +186,13 @@ export const FormWizard: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Comentarios adicionales
+                  Comentarios adicionais
                 </label>
                 <textarea
                   name="comments"
                   rows={3}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  placeholder="Alguna duda o información extra..."
+                  placeholder="Algunha dúbida ou información extra..."
                   value={formData.comments}
                   onChange={handleChange}
                 />
@@ -208,16 +208,16 @@ export const FormWizard: React.FC = () => {
                 <div className="p-2 bg-green-100 rounded-lg">
                     <FileText className="w-6 h-6 text-green-600" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800">Confirmar Datos</h2>
+                <h2 className="text-2xl font-bold text-gray-800">Confirmar datos</h2>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6 space-y-4 text-sm text-gray-700">
                <div className="flex justify-between border-b pb-2">
-                 <span className="font-semibold">Nombre:</span>
+                 <span className="font-semibold">Nome:</span>
                  <span>{formData.fullName}</span>
                </div>
                <div className="flex justify-between border-b pb-2">
-                 <span className="font-semibold">Email:</span>
+                 <span className="font-semibold">Correo electrónico:</span>
                  <span>{formData.email}</span>
                </div>
                <div className="flex justify-between border-b pb-2">
@@ -225,22 +225,22 @@ export const FormWizard: React.FC = () => {
                  <span className="font-mono bg-gray-200 px-1 rounded">{formData.lichessUsername}</span>
                </div>
                <div className="flex justify-between border-b pb-2">
-                 <span className="font-semibold">Año Nacimiento:</span>
+                 <span className="font-semibold">Ano de nacemento:</span>
                  <span>{formData.birthYear}</span>
                </div>
                <div className="flex justify-between border-b pb-2">
-                 <span className="font-semibold">Club:</span>
+                 <span className="font-semibold">Clube:</span>
                  <span>{formData.clubName || '-'}</span>
                </div>
                <div className="flex justify-between pb-2">
                  <span className="font-semibold">Socio AGAX:</span>
-                 <span>{formData.isAgaxMember === 'Yes' ? 'Sí' : formData.isAgaxMember === 'Processing' ? 'En trámite' : 'No'}</span>
+                 <span>{formData.isAgaxMember === 'Yes' ? 'Si' : formData.isAgaxMember === 'Processing' ? 'En tramitación' : 'Non'}</span>
                </div>
             </div>
 
             <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded text-yellow-800 text-xs">
               <p>
-                Al enviar este formulario, aceptas que tus datos sean utilizados por AGAX únicamente para la gestión de este evento deportivo.
+                Ao enviar este formulario, aceptas que os teus datos sexan utilizados por AGAX unicamente para a xestión deste evento deportivo.
               </p>
             </div>
           </div>
@@ -261,12 +261,12 @@ export const FormWizard: React.FC = () => {
 
         {currentStep < 3 ? (
           <Button onClick={handleNext}>
-            Siguiente
+            Seguinte
             <ChevronRight className="w-4 h-4 ml-1" />
           </Button>
         ) : (
           <Button onClick={handleSubmit} isLoading={isSubmitting} variant="primary" className="bg-green-600 hover:bg-green-700">
-            Finalizar Inscripción
+            Finalizar inscrición
           </Button>
         )}
       </div>
