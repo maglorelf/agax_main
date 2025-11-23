@@ -20,6 +20,17 @@ jobs:
         with:
           fetch-depth: 0
       
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Application
+        run: npm run build
+      
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -28,25 +39,14 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
           protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
-          local-dir: ./src/
+          local-dir: ./dist/
           server-dir: /agax/
           dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.DS_Store
-            **/Thumbs.db
-            **/README.md
-            **/DEPLOYMENT.md
-            **/README.txt
-            **/.vscode/**
-            **/.idea/**
           log-level: verbose
           
       - name: Deployment Summary
         run: |
           echo "✅ Deployment completed successfully!"
-          echo "📁 Deployed from: ./src/"
+          echo "📁 Deployed from: ./dist/"
           echo "🌐 Server: ${{ secrets.FTP_SERVER }}"
           echo "⏰ Deployment time: $(date)"
