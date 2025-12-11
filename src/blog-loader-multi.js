@@ -30,6 +30,12 @@ class MultiBlogLoader {
                 name: 'Xadrecistas',
                 url: 'https://www.xadrecista.eu',
                 color: '#CC6600'
+            },
+            {
+                id: 'norte',
+                name: 'NORTE',
+                url: 'https://www.xadrezdonorte.org',
+                color: '#3367ba'
             }
         ];
         
