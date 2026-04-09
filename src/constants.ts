@@ -10,9 +10,10 @@ export const INITIAL_FORM_DATA = {
   lichessUsername: '',
   birthYear: '',
   clubName: '',
-  isAgaxMember: 'No',
+  isAgaxMember: 'Non',
   comments: '',
-  registrationDate: new Date().toISOString()
+  registrationDate: new Date().toISOString(),
+  rgpdAccepted: false
 };
 
 export const STEPS = [

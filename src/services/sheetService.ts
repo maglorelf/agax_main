@@ -3,21 +3,18 @@ import { GOOGLE_SCRIPT_URL } from '../constants';
 
 /**
  * SUBMITTING TO GOOGLE SHEETS WITHOUT A BACKEND:
- * 
- * To make this work, the user needs to:
- * 1. Create a Google Sheet.
- * 2. Go to Extensions > Apps Script.
- * 3. Paste the following code in the script editor:
- * 
- *    function doPost(e) {
- *      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
- *      var data = JSON.parse(e.postData.contents);
- *      sheet.appendRow([data.date, data.fullName, data.email, data.lichessUser, data.birthYear, data.club, data.isMember, data.comments]);
- *      return ContentService.createTextOutput(JSON.stringify({"result":"success"})).setMimeType(ContentService.MimeType.JSON);
- *    }
- * 
- * 4. Deploy as Web App -> Execute as: "Me" -> Who has access: "Anyone".
- * 5. Copy the URL and put it in `constants.ts`.
+ *
+ * The full Google Apps Script source and deployment instructions live in:
+ *   scripts/google-apps-script/Code.gs
+ *
+ * Quick steps:
+ *   1. Open the target Google Sheet → Extensions > Apps Script.
+ *   2. Paste the contents of Code.gs and save.
+ *   3. Deploy > New deployment (Web app, Execute as: Me, Access: Anyone).
+ *   4. Copy the Web App URL and set it as GOOGLE_SCRIPT_URL in constants.ts.
+ *   5. Run setupHeaders() once from the Apps Script editor to write column titles.
+ *
+ * To update the script after changes, see the "Updating" section in Code.gs.
  */
 
 export const submitToGoogleSheet = async (data: UserFormData): Promise<SheetResponse> => {
@@ -44,6 +41,7 @@ export const submitToGoogleSheet = async (data: UserFormData): Promise<SheetResp
     formData.append('club', data.clubName);
     formData.append('isMember', data.isAgaxMember);
     formData.append('comments', data.comments);
+    formData.append('rgpd', data.rgpdAccepted ? 'Si' : 'Non');
     formData.append('date', new Date().toISOString());
 
     await fetch(GOOGLE_SCRIPT_URL, {

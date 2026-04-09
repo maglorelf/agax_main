@@ -13,6 +13,7 @@ export interface UserFormData {
   isAgaxMember: string; // "Yes" | "No"
   comments: string;
   registrationDate: string;
+  rgpdAccepted: boolean;
 }
 
 export interface FormErrors {
@@ -20,6 +21,7 @@ export interface FormErrors {
   email?: string;
   lichessUsername?: string;
   birthYear?: string;
+  rgpdAccepted?: string;
 }
 
 export interface SheetResponse {

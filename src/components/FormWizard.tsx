@@ -23,6 +23,14 @@ export const FormWizard: React.FC = () => {
     }
   };
 
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+    setFormData(prev => ({ ...prev, [name]: checked }));
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
+  };
+
   const validateStep = (step: number): boolean => {
     const newErrors: FormErrors = {};
     let isValid = true;
@@ -38,6 +46,10 @@ export const FormWizard: React.FC = () => {
        // Validation for step 2 if needed (e.g. mandatory year)
        if(!formData.birthYear) newErrors.birthYear = 'O ano de nacemento é obrigatorio para categorías';
      }
+
+    if (step === 3) {
+      if (!formData.rgpdAccepted) newErrors.rgpdAccepted = 'Debes aceptar a política de privacidade para continuar';
+    }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -169,9 +181,9 @@ export const FormWizard: React.FC = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     >
-                      <option value="No">Non</option>
-                      <option value="Yes">Si</option>
-                      <option value="Processing">En tramitación</option>
+                      <option value="Non">Non</option>
+                      <option value="Si">Si</option>
+                      <option value="En tramitación">En tramitación</option>
                     </select>
                  </div>
               </div>
@@ -234,14 +246,36 @@ export const FormWizard: React.FC = () => {
                </div>
                <div className="flex justify-between pb-2">
                  <span className="font-semibold">Socio AGAX:</span>
-                 <span>{formData.isAgaxMember === 'Yes' ? 'Si' : formData.isAgaxMember === 'Processing' ? 'En tramitación' : 'Non'}</span>
+                 <span>{formData.isAgaxMember}</span>
                </div>
             </div>
 
-            <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded text-yellow-800 text-xs">
-              <p>
-                Ao enviar este formulario, aceptas que os teus datos sexan utilizados por AGAX unicamente para a xestión deste evento deportivo.
-              </p>
+            <div className="mt-6 space-y-3">
+              <div className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="rgpdAccepted"
+                  name="rgpdAccepted"
+                  checked={formData.rgpdAccepted}
+                  onChange={handleCheckboxChange}
+                  className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+                />
+                <label htmlFor="rgpdAccepted" className="text-sm text-gray-700 cursor-pointer">
+                  Lin e acepto a{' '}
+                  <a
+                    href="/politica-privacidade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline font-medium"
+                  >
+                    política de privacidade
+                  </a>{' '}
+                  de AGAX. Entendo que os meus datos serán utilizados para xestionar a miña participación no equipo Lichess.
+                </label>
+              </div>
+              {errors.rgpdAccepted && (
+                <p className="text-xs text-red-500 ml-7">{errors.rgpdAccepted}</p>
+              )}
             </div>
           </div>
         )}
