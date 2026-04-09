@@ -23,7 +23,8 @@ const BLOGS = [
   { id: 'novas', name: 'Novas', url: 'https://agaxnet.blogspot.com', color: '#006699' },
   { id: 'agaxnet', name: 'agax.net', url: 'https://xadrezatlantico.blogspot.com', color: '#0099CC' },
   { id: 'xogando', name: 'Xogando co Xadrez', url: 'https://www.xogandocoxadrez.eu', color: '#00AA66' },
-  { id: 'xadrecista', name: 'Xadrecistas', url: 'https://www.xadrecista.eu', color: '#CC6600' }
+  { id: 'xadrecista', name: 'Xadrecistas', url: 'https://www.xadrecista.eu', color: '#CC6600' },
+  { id: 'norte', name: 'Xadrez do Norte', url: 'https://www.xadrezdonorte.org', color: '#3367ba' }
 ];
 
 export const Home: React.FC = () => {
