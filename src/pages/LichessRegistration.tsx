@@ -17,7 +17,7 @@ export const LichessRegistration: React.FC = () => {
 
         <div className="mt-12 text-center text-sm text-gray-500">
           <p>Tes problemas?</p>
-          <a href="mailto:info@agax.org" className="text-blue-600 hover:underline">Contactar co soporte</a>
+          <a href="mailto:correo@agax.org" className="text-blue-600 hover:underline">Contactar co soporte</a>
         </div>
     </div>
   );

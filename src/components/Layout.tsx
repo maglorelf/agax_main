@@ -17,7 +17,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             
             <div className="title-section">
                 <h1>ASOCIACIÓN GALEGA DE XADRECISTAS</h1>
-                <p className="anniversary">1989-2025. XXXVI Aniversario.</p>
+                <p className="anniversary">1989-2026. XXXVII Aniversario.</p>
                 <div className="domains">
                     <a href="https://www.xadrez.gal" className="domain">xadrez.gal</a>
                     <span className="separator">|</span>
@@ -39,10 +39,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <span className="separator">●</span>
                 <a href="https://www.agax.net" target="_blank" rel="noopener noreferrer">Xadrez en liña en agax.net</a>
                 <span className="separator">●</span>
-                <Link to="/registro-lichess" className={location.pathname === '/registro-lichess' ? 'nav-highlight' : ''}>
-                    Inscrición Equipo Online
-                </Link>
-                <span className="separator">●</span>
+
             </nav>
         </div>
       </header>
@@ -58,7 +55,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <div className="footer-links">
                 <div className="footer-section">
                     <h4>Información</h4>
-                    <a href="/pax/directiva.htm" target="_blank">Directiva</a>
+                    <Link to="/directiva">Directiva</Link>
                     <a href="/pdfs/estatutos%20agax.pdf" target="_blank">Estatutos</a>
                     <a href="/arquivos/arquivo.htm" target="_blank">Arquivos Antigos</a>
                 </div>
@@ -66,6 +63,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                     <h4>Contacto</h4>
                     <a href="mailto:correo@agax.org?subject=Contacto dende a web">correo@agax.org</a>
                     <a href="http://eepurl.com/chIhNH" target="_blank">Subscribirse á lista de correo</a>
+                    <Link to="/registro-lichess">Inscrición Equipo Online</Link>
                 </div>
                 <div className="footer-section">
                     <h4>Redes Sociais</h4>
@@ -75,13 +73,14 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 </div>
                 <div className="footer-section">
                     <h4>Legal</h4>
-                    <p className="legal-text">© 2025 ASOCIACIÓN GALEGA DE XADRECISTAS</p>
+                    <p className="legal-text">© 2026 ASOCIACIÓN GALEGA DE XADRECISTAS</p>
                     <p className="legal-text">@xadrecistas</p>
                     <p className="legal-text">Número de inscrición: 88.357</p>
                     <p className="legal-text">Rexistro do Ministerio de Interior</p>
                     <p className="legal-text">1 de setembro de 1989</p>
                     <p className="legal-text">Asociación sen ánimo de lucro</p>
                     <p className="legal-text">CIF: G-15228844</p>
+                    <Link to="/politica-privacidade" className="legal-text" style={{ textDecoration: 'underline' }}>Política de privacidade</Link>
                 </div>
             </div>
         </div>

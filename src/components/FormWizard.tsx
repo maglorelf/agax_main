@@ -5,7 +5,8 @@ import { Input } from './Input';
 import { Button } from './Button';
 import { submitToGoogleSheet } from '../services/sheetService';
 import { SuccessStep } from './SuccessStep';
-import { ChevronRight, ChevronLeft, User, ShieldCheck, FileText } from 'lucide-react';
+import { PrivacyPolicyContent } from './PrivacyPolicyContent';
+import { ChevronRight, ChevronLeft, User, ShieldCheck, FileText, X } from 'lucide-react';
 
 export const FormWizard: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -13,6 +14,7 @@ export const FormWizard: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -262,14 +264,13 @@ export const FormWizard: React.FC = () => {
                 />
                 <label htmlFor="rgpdAccepted" className="text-sm text-gray-700 cursor-pointer">
                   Lin e acepto a{' '}
-                  <a
-                    href="/politica-privacidade"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => setShowPrivacyModal(true)}
                     className="text-blue-600 hover:underline font-medium"
                   >
                     política de privacidade
-                  </a>{' '}
+                  </button>{' '}
                   de AGAX. Entendo que os meus datos serán utilizados para xestionar a miña participación no equipo Lichess.
                 </label>
               </div>
@@ -304,6 +305,37 @@ export const FormWizard: React.FC = () => {
           </Button>
         )}
       </div>
+
+      {/* Privacy Policy Modal */}
+      {showPrivacyModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
+          onClick={() => setShowPrivacyModal(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[80vh] flex flex-col"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between p-6 border-b border-gray-100">
+              <h2 className="text-lg font-bold text-gray-800">Política de privacidade</h2>
+              <button
+                onClick={() => setShowPrivacyModal(false)}
+                className="p-1 rounded-lg hover:bg-gray-100 text-gray-500"
+                aria-label="Pechar"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="overflow-y-auto p-6">
+              <PrivacyPolicyContent />
+            </div>
+            <div className="p-4 border-t border-gray-100 text-right">
+              <Button onClick={() => setShowPrivacyModal(false)}>Pechar</Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
