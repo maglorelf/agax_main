@@ -130,5 +130,5 @@ Para dudas o mejoras, contactar con el equipo de desarrollo de AGAX.
 ---
 
 **Versión**: 1.0.0  
-**Fecha**: Noviembre 2025  
+**Fecha**: Abril 2026  
 **Licencia**: Según LICENSE del proyecto
