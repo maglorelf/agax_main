@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const location = useLocation();
-
   return (
     <div className="min-h-screen flex flex-col font-sans text-gray-900">
       {/* Header */}
