@@ -604,6 +604,10 @@ a:hover {
     background-color: #CC6600 !important;
 }
 
+.blog-chip.chip-norte {
+    background-color: #3367ba !important;
+}
+
 .btn-clear {
     padding: 0.75rem 1.5rem;
     background-color: var(--agax-light-gray);
@@ -810,6 +814,10 @@ a:hover {
 
 .blog-source.xadrecista {
     background-color: #CC6600;
+}
+
+.blog-source.norte {
+    background-color: #3367ba;
 }
 
 /* Loading Indicator */
