@@ -56,12 +56,15 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                     <Link to="/directiva">Directiva</Link>
                     <a href="/pdfs/estatutos%20agax.pdf" target="_blank">Estatutos</a>
                     <a href="/arquivos/arquivo.htm" target="_blank">Arquivos Antigos</a>
+
+                    <h4 style={{ marginTop: '1.1rem' }}>Contacto</h4>
+                    <a href="mailto:correo@agax.org?subject=Contacto dende a web">correo@agax.org</a>
                 </div>
                 <div className="footer-section">
-                    <h4>Contacto</h4>
-                    <a href="mailto:correo@agax.org?subject=Contacto dende a web">correo@agax.org</a>
-                    <a href="http://eepurl.com/chIhNH" target="_blank">Subscribirse á lista de correo</a>
+                    <h4>Formularios</h4>
+                    <Link to="/alta-socio">Faite socio</Link>
                     <Link to="/registro-lichess">Inscrición Equipo Online</Link>
+                    <a href="http://eepurl.com/chIhNH" target="_blank">Subscribirse á lista de correo</a>
                 </div>
                 <div className="footer-section">
                     <h4>Redes Sociais</h4>

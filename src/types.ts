@@ -28,3 +28,28 @@ export interface SheetResponse {
   result: 'success' | 'error';
   message?: string;
 }
+
+export interface MemberSignupFormData {
+  fullName: string;
+  birthDate: string;
+  dniNie: string;
+  email: string;
+  phone: string;
+  requestDate: string;
+  signatureName: string;
+  guardianName: string;
+  privacyAccepted: boolean;
+  mediaPermissionAccepted: boolean;
+}
+
+export interface MemberSignupErrors {
+  fullName?: string;
+  birthDate?: string;
+  dniNie?: string;
+  phone?: string;
+  requestDate?: string;
+  signatureName?: string;
+  guardianName?: string;
+  privacyAccepted?: string;
+  mediaPermissionAccepted?: string;
+}

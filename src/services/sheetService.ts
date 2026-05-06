@@ -1,5 +1,5 @@
-import { UserFormData, SheetResponse } from '../types';
-import { GOOGLE_SCRIPT_URL } from '../constants';
+import { UserFormData, SheetResponse, MemberSignupFormData } from '../types';
+import { GOOGLE_SCRIPT_URL, REXISTRO_SOCIOS_AGAX } from '../constants';
 
 /**
  * SUBMITTING TO GOOGLE SHEETS WITHOUT A BACKEND:
@@ -56,5 +56,40 @@ export const submitToGoogleSheet = async (data: UserFormData): Promise<SheetResp
   } catch (error) {
     console.error("Erro ao enviar á folla", error);
     return { result: 'error', message: 'Erro de conexión coa folla de cálculo.' };
+  }
+};
+
+export const submitMemberSignupToGoogleSheet = async (data: MemberSignupFormData): Promise<SheetResponse> => {
+  if (REXISTRO_SOCIOS_AGAX.includes('PENDENTE_DE_CONFIGURAR')) {
+    console.warn('Usando envio simulado: REXISTRO_SOCIOS_AGAX segue pendente de configurar.');
+    await new Promise(resolve => setTimeout(resolve, 1200));
+    return { result: 'success', message: 'Envio simulado correcto' };
+  }
+
+  try {
+    const formData = new FormData();
+    formData.append('type', 'MEMBER_SIGNUP');
+    formData.append('fullName', data.fullName);
+    formData.append('birthDate', data.birthDate);
+    formData.append('dniNie', data.dniNie);
+    formData.append('email', data.email);
+    formData.append('phone', data.phone);
+    formData.append('requestDate', data.requestDate);
+    formData.append('signatureName', data.signatureName);
+    formData.append('guardianName', data.guardianName);
+    formData.append('privacyAccepted', data.privacyAccepted ? 'Si' : 'Non');
+    formData.append('mediaPermissionAccepted', data.mediaPermissionAccepted ? 'Si' : 'Non');
+    formData.append('submittedAt', new Date().toISOString());
+
+    await fetch(REXISTRO_SOCIOS_AGAX, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'
+    });
+
+    return { result: 'success' };
+  } catch (error) {
+    console.error('Erro ao enviar o rexistro de socio', error);
+    return { result: 'error', message: 'Erro de conexión ao enviar a solicitude.' };
   }
 };

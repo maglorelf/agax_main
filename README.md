@@ -33,6 +33,12 @@ Para calquera uso das imaxes ou contido visual que non estea cuberto por esta li
 
 As contribucións ao código son benvidas. Por favor, asegúrate de respectar as restricións de uso das imaxes e do contido visual.
 
+## 🧾 Configuración de Formularios en Google Sheets
+
+Para activar e reproducir a configuración de rexistro dos formularios (Lichess e Faite socio), segue a guía en:
+
+- [docs/google-sheets-setup.md](docs/google-sheets-setup.md)
+
 ## 📧 Contacto
 
 Para máis información ou solicitudes de uso das imaxes, por favor contacta coa Asociación Galega de Xadrecistas.
