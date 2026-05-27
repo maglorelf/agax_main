@@ -28,6 +28,8 @@ const BLOGS = [
 ];
 
 export const Home: React.FC = () => {
+  const blogPageSize = 100;
+  const maxFeedRequestsPerBlog = 200;
   const [allPosts, setAllPosts] = useState<BlogPost[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
   const [displayedPosts, setDisplayedPosts] = useState<BlogPost[]>([]);
@@ -40,7 +42,7 @@ export const Home: React.FC = () => {
   });
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [page, setPage] = useState(1);
-  const postsPerLoad = 10;
+  const postsPerLoad = 20;
 
   // Load blogs
   useEffect(() => {
@@ -95,14 +97,14 @@ export const Home: React.FC = () => {
     setDisplayedPosts(filteredPosts.slice(0, page * postsPerLoad));
   }, [filteredPosts, page]);
 
-  const loadBlogPosts = (blog: any): Promise<BlogPost[]> => {
+  const loadBlogFeedPage = (blog: any, startIndex: number, maxResults: number): Promise<any | null> => {
     return new Promise((resolve) => {
       const callbackName = 'blogCallback' + Date.now() + Math.random().toString(36).substr(2, 9);
-      const feedUrl = `${blog.url}/feeds/posts/default?alt=json-in-script&max-results=25&callback=${callbackName}`;
+      const feedUrl = `${blog.url}/feeds/posts/default?alt=json-in-script&start-index=${startIndex}&max-results=${maxResults}&callback=${callbackName}`;
       
       const timeout = setTimeout(() => {
         cleanup();
-        resolve([]);
+        resolve(null);
       }, 10000);
 
       const cleanup = () => {
@@ -115,21 +117,45 @@ export const Home: React.FC = () => {
       // @ts-ignore
       window[callbackName] = (data: any) => {
         cleanup();
-        try {
-          resolve(parseBlogPosts(data, blog));
-        } catch (e) {
-          resolve([]);
-        }
+        resolve(data);
       };
 
       const script = document.createElement('script');
       script.src = feedUrl;
       script.onerror = () => {
         cleanup();
-        resolve([]);
+        resolve(null);
       };
       document.body.appendChild(script);
     });
+  };
+
+  const loadBlogPosts = async (blog: any): Promise<BlogPost[]> => {
+    const collectedPosts: BlogPost[] = [];
+    let startIndex = 1;
+    let expectedTotal = Number.POSITIVE_INFINITY;
+    let requests = 0;
+
+    // Keep requesting pages until the feed is exhausted or we hit a request safety cap.
+    while (startIndex <= expectedTotal && requests < maxFeedRequestsPerBlog) {
+      const data = await loadBlogFeedPage(blog, startIndex, blogPageSize);
+      if (!data?.feed?.entry || data.feed.entry.length === 0) break;
+
+      requests += 1;
+
+      const totalFromFeed = Number(data.feed['openSearch$totalResults']?.$t ?? '0');
+      if (Number.isFinite(totalFromFeed) && totalFromFeed > 0) {
+        expectedTotal = totalFromFeed;
+      }
+
+      const pagePosts = parseBlogPosts(data, blog);
+      collectedPosts.push(...pagePosts);
+
+      if (data.feed.entry.length < blogPageSize) break;
+      startIndex += data.feed.entry.length;
+    }
+
+    return collectedPosts;
   };
 
   const parseBlogPosts = (data: any, blog: any): BlogPost[] => {
@@ -229,39 +255,49 @@ export const Home: React.FC = () => {
               <p>Cargando máis publicacións...</p>
             </div>
           ) : (
-            <div className="posts-grid">
-              {displayedPosts.map((post, idx) => (
-                <article key={idx} className="post-card">
-                  <div className="post-image-wrapper" onClick={() => setSelectedPost(post)} style={{cursor: 'pointer'}}>
-                    <span className={`blog-source ${post.blog.id}`} style={{backgroundColor: post.blog.color}}>
-                      {post.blog.name}
-                    </span>
-                    {post.imageSmall ? (
-                      <img src={post.imageSmall} alt={post.title} className="post-image" loading="lazy" />
-                    ) : (
-                      <div className="post-image placeholder">♟️</div>
-                    )}
-                  </div>
-                  <div className="post-content">
-                    <h3 className="post-title">
-                      <a href="#" onClick={(e) => { e.preventDefault(); setSelectedPost(post); }}>{post.title}</a>
-                    </h3>
-                    <div className="post-meta">
-                      <span className="post-date">📅 {format(post.date, "d 'de' MMMM 'de' yyyy", { locale: es })}</span>
+            <>
+              <div className="posts-grid">
+                {displayedPosts.map((post, idx) => (
+                  <article key={idx} className="post-card">
+                    <div className="post-image-wrapper" onClick={() => setSelectedPost(post)} style={{cursor: 'pointer'}}>
+                      <span className={`blog-source ${post.blog.id}`} style={{backgroundColor: post.blog.color}}>
+                        {post.blog.name}
+                      </span>
+                      {post.imageSmall ? (
+                        <img src={post.imageSmall} alt={post.title} className="post-image" loading="lazy" />
+                      ) : (
+                        <div className="post-image placeholder">♟️</div>
+                      )}
                     </div>
-                    <div className="post-summary">{post.summary}</div>
-                    <div className="post-footer">
-                      <button className="post-read-more" onClick={() => setSelectedPost(post)}>Ler máis →</button>
-                      <div className="post-labels">
-                        {post.labels.slice(0, 3).map(label => (
-                          <span key={label} className="post-label">{label}</span>
-                        ))}
+                    <div className="post-content">
+                      <h3 className="post-title">
+                        <a href="#" onClick={(e) => { e.preventDefault(); setSelectedPost(post); }}>{post.title}</a>
+                      </h3>
+                      <div className="post-meta">
+                        <span className="post-date">📅 {format(post.date, "d 'de' MMMM 'de' yyyy", { locale: es })}</span>
+                      </div>
+                      <div className="post-summary">{post.summary}</div>
+                      <div className="post-footer">
+                        <button className="post-read-more" onClick={() => setSelectedPost(post)}>Ler máis →</button>
+                        <div className="post-labels">
+                          {post.labels.slice(0, 3).map(label => (
+                            <span key={label} className="post-label">{label}</span>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-              ))}
-            </div>
+                  </article>
+                ))}
+              </div>
+
+              {displayedPosts.length < filteredPosts.length && (
+                <div className="load-more-wrapper">
+                  <button className="btn-load-more" onClick={() => setPage(p => p + 1)}>
+                    Cargar máis publicacións
+                  </button>
+                </div>
+              )}
+            </>
           )}
           
           {!isLoading && displayedPosts.length === 0 && (
@@ -302,6 +338,16 @@ export const Home: React.FC = () => {
                </div>
                <div dangerouslySetInnerHTML={{ __html: selectedPost.content.replace(/<img([^>]*)>/gi, '<img$1 style="max-width: 100%; height: auto; display: block; margin: 1rem auto;">') }} />
             </div>
+              <div className="modal-footer">
+                <a
+                  href={selectedPost.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-original"
+                >
+                  Ver o post orixinal
+                </a>
+              </div>
           </div>
         </div>
       )}

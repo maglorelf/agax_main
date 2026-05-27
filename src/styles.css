@@ -21,6 +21,12 @@
     --spacing-xl: 3rem;
 }
 
+html,
+body,
+#root {
+    height: 100%;
+}
+
 /* ================================
    Reset y Base
    ================================ */
@@ -176,7 +182,25 @@ a:hover {
     max-width: 1400px;
     margin: var(--spacing-md) auto;
     padding: 0 var(--spacing-md);
-    align-items: start;
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+}
+
+.layout-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+.layout-main-home {
+    overflow: hidden;
+}
+
+.layout-main-default {
+    overflow: auto;
 }
 
 /* ================================
@@ -191,6 +215,7 @@ a:hover {
     position: sticky;
     top: var(--spacing-md);
     max-width: 280px;
+    align-self: start;
 }
 
 .sidebar-right h3 {
@@ -239,6 +264,9 @@ a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ================================
@@ -493,9 +521,11 @@ a:hover {
     padding: var(--spacing-md);
     background-color: var(--agax-white);
     height: 100%;
-    max-height: 800px;
+    max-height: none;
     overflow-y: auto;
     overflow-x: hidden;
+    min-height: 0;
+    flex: 1 1 auto;
 }
 
 .blog-header {
@@ -649,6 +679,28 @@ a:hover {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
+}
+
+.load-more-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 var(--spacing-lg);
+}
+
+.btn-load-more {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--agax-blue);
+    border-radius: 6px;
+    background-color: var(--agax-white);
+    color: var(--agax-blue);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-load-more:hover {
+    background-color: var(--agax-blue);
+    color: var(--agax-white);
 }
 
 /* Individual Post Card */

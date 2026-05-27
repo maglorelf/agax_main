@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const location = useLocation();
+    const isHome = location.pathname === '/';
+
   return (
     <div className="min-h-screen flex flex-col font-sans text-gray-900">
       {/* Header */}
@@ -43,7 +46,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow">
+            <main className={isHome ? 'layout-main layout-main-home' : 'layout-main layout-main-default'}>
         {children}
       </main>
 
