@@ -61,6 +61,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <nav className="flex space-x-2 text-xs md:text-sm font-medium">
                 <Link to="/" className={`px-2.5 py-1.5 rounded hover:bg-white/10 transition-colors ${location.pathname === '/' ? 'bg-white/15 text-white' : 'text-gray-100'}`}>Inicio</Link>
                 <Link to="/directiva" className={`px-2.5 py-1.5 rounded hover:bg-white/10 transition-colors ${location.pathname === '/directiva' ? 'bg-white/15 text-white' : 'text-gray-100'}`}>Directiva</Link>
+                <Link to="/registro-lichess" className={`px-2.5 py-1.5 rounded hover:bg-white/10 transition-colors ${location.pathname === '/registro-lichess' ? 'bg-white/15 text-white' : 'text-gray-100'}`}>Inscrición Lichess</Link>
                 <Link to="/alta-socio" className={`px-3 py-1.5 rounded bg-green-600 hover:bg-green-700 text-white font-bold transition-all`}>Faite socio</Link>
               </nav>
             </div>
@@ -84,13 +85,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className="hidden md:block bg-black/15 border-t border-white/10 py-1.5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex justify-center space-x-6 text-[11px] md:text-xs">
-              <a href="https://www.xogandocoxadrez.eu" target="_blank" rel="noopener noreferrer" className="hover:text-blue-200 transition-colors flex items-center">
+              <a href="https://www.xogandocoxadrez.eu" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-200 transition-colors flex items-center">
                 <span className="text-green-400 mr-1.5 font-bold text-[8px]">●</span> Novidades en xogando co xadrez
               </a>
-              <a href="https://www.xadrecista.eu" target="_blank" rel="noopener noreferrer" className="hover:text-blue-200 transition-colors flex items-center">
+              <a href="https://www.xadrecista.eu" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-200 transition-colors flex items-center">
                 <span className="text-green-400 mr-1.5 font-bold text-[8px]">●</span> Torneos en xadrecista.eu
               </a>
-              <a href="https://www.agax.net" target="_blank" rel="noopener noreferrer" className="hover:text-blue-200 transition-colors flex items-center">
+              <a href="https://www.agax.net" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-200 transition-colors flex items-center">
                 <span className="text-green-400 mr-1.5 font-bold text-[8px]">●</span> Xadrez en liña en agax.net
               </a>
             </nav>
@@ -156,6 +157,28 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               >
                 <span className="text-green-400 mr-1.5 text-[8px]">●</span> Xadrez en liña en agax.net
               </a>
+
+              <div className="border-t border-white/10 my-2 pt-2 px-3">
+                <span className="text-[10px] text-blue-200 font-bold uppercase tracking-wider block mb-2">Máis información</span>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <a href="/pdfs/estatutos%20agax.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white transition-colors py-1">Estatutos</a>
+                  <a href="/arquivos/arquivo.htm" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white transition-colors py-1">Arquivos Antigos</a>
+                  <a href="http://eepurl.com/chIhNH" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white transition-colors py-1">Lista de correo</a>
+                  <Link to="/politica-privacidade" onClick={closeMenu} className="text-gray-200 hover:text-white transition-colors py-1">Privacidade</Link>
+                  <a href="mailto:correo@agax.org?subject=Contacto dende a web" className="text-gray-200 hover:text-white transition-colors py-1 col-span-2 flex items-center">
+                    <span>✉ correo@agax.org</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="border-t border-white/10 my-2 pt-2 px-3">
+                <span className="text-[10px] text-blue-200 font-bold uppercase tracking-wider block mb-1.5">Redes Sociais</span>
+                <div className="flex space-x-4 text-xs">
+                  <a href="https://www.instagram.com/xadrecistas" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white transition-colors">Instagram</a>
+                  <a href="https://www.facebook.com/xadrecistas" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white transition-colors">Facebook</a>
+                  <a href="https://twitter.com/xadrecistas" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white transition-colors">Twitter</a>
+                </div>
+              </div>
 
               <div className="border-t border-white/10 my-2 pt-2 px-3 text-center">
                 <p className="text-xs text-blue-300 font-bold uppercase tracking-wider">
