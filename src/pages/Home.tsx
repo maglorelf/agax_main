@@ -208,7 +208,7 @@ export const Home: React.FC = () => {
           {/* Hero Section */}
           <div className="mb-8 p-6 md:p-10 rounded-2xl bg-gradient-to-r from-[#006699] to-[#004466] text-white relative overflow-hidden shadow-lg border border-white/10">
             {/* Decorative background Chess Pieces */}
-            <div className="absolute inset-0 opacity-5 flex justify-around pointer-events-none select-none">
+            <div aria-hidden="true" className="absolute inset-0 opacity-5 flex justify-around pointer-events-none select-none">
               <span className="text-[10rem] -mt-10">♟</span>
               <span className="text-[12rem] mt-6">♞</span>
               <span className="text-[10rem] -mt-5">♜</span>
@@ -227,14 +227,14 @@ export const Home: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link 
                   to="/alta-socio" 
-                  className="inline-flex items-center justify-center px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-sm transition-all hover:scale-102 active:scale-98 text-sm gap-1.5"
+                  className="inline-flex items-center justify-center px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98] text-sm gap-1.5"
                 >
                   <span>Faite socio</span>
                   <ChevronRight className="w-4 h-4" />
                 </Link>
                 <Link 
                   to="/registro-lichess" 
-                  className="inline-flex items-center justify-center px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg border border-white/30 backdrop-blur-sm transition-all hover:scale-102 active:scale-98 text-sm gap-1.5"
+                  className="inline-flex items-center justify-center px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg border border-white/30 backdrop-blur-sm transition-all hover:scale-[1.02] active:scale-[0.98] text-sm gap-1.5"
                 >
                   <span>Inscrición AGAX Aberto en Lichess</span>
                   <span className="text-[10px] bg-blue-500/80 px-1.5 py-0.5 rounded">Lichess</span>

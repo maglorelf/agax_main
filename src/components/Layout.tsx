@@ -7,13 +7,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     const isHome = location.pathname === '/';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const toggleMenu = () => setIsMenuOpen((prev) => !prev);
     const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-gray-900">
       {/* Header */}
-      <header className="header sticky top-0 z-50">
+      <header className="header">
         {/* Main Header Container */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
@@ -24,7 +24,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <img 
                   src="/imax/logoagax01.gif" 
                   alt="Logo AGAX" 
-                  className="h-10 w-auto md:h-14 filter drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3))" 
+                  className="h-10 w-auto md:h-14 drop-shadow-[1px_1px_2px_rgba(0,0,0,0.3)]" 
                 />
                 <div className="flex flex-col">
                   <span className="font-bold text-sm md:text-base tracking-wider leading-tight text-white">
@@ -49,16 +49,14 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               </div>
             </div>
 
-            {/* Desktop Right Banner / Internal Navigation */}
-            <div className="hidden md:flex items-center space-x-4">
-            </div>
-
             {/* Mobile Hamburger Button - Hidden on Desktop */}
             <div className="flex md:hidden">
               <button
+                type="button"
                 onClick={toggleMenu}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-200 hover:text-white hover:bg-white/10 focus:outline-none transition-all"
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-200 hover:text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#004466] transition-all"
                 aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
               >
                 <span className="sr-only">Abrir menú principal</span>
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -87,7 +85,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-[#004466] border-t border-white/10 transition-all duration-300">
+          <div id="mobile-menu" className="md:hidden bg-[#004466] border-t border-white/10 transition-all duration-300">
             <div className="px-3 pt-2 pb-4 space-y-1">
               <Link
                 to="/"
