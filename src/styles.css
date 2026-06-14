@@ -418,28 +418,6 @@ a:hover {
         gap: var(--spacing-md);
     }
     
-    .header-main {
-        grid-template-columns: 1fr;
-        padding: var(--spacing-sm);
-    }
-    
-    .logo-section {
-        justify-content: center;
-        margin-bottom: var(--spacing-sm);
-    }
-    
-    .title-section h1 {
-        font-size: 1.1rem;
-    }
-    
-    .domains {
-        flex-direction: column;
-        gap: var(--spacing-xs);
-    }
-    
-    .domain {
-        font-size: 1.2rem;
-    }
     .iframe-container {
         min-height: 600px;
     }
@@ -479,10 +457,6 @@ a:hover {
    ================================ */
 .text-center {
     text-align: center;
-}
-
-.hidden {
-    display: none !important;
 }
 
 /* Loading State */

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
+import { ChevronRight } from 'lucide-react';
 
 interface BlogPost {
   title: string;
@@ -203,6 +205,44 @@ export const Home: React.FC = () => {
     <div className="main-container">
       <section className="content-main">
         <div className="blog-container" onScroll={handleScroll}>
+          {/* Hero Section */}
+          <div className="mb-8 p-6 md:p-10 rounded-2xl bg-gradient-to-r from-[#006699] to-[#004466] text-white relative overflow-hidden shadow-lg border border-white/10">
+            {/* Decorative background Chess Pieces */}
+            <div aria-hidden="true" className="absolute inset-0 opacity-5 flex justify-around pointer-events-none select-none">
+              <span className="text-[10rem] -mt-10">♟</span>
+              <span className="text-[12rem] mt-6">♞</span>
+              <span className="text-[10rem] -mt-5">♜</span>
+            </div>
+            
+            <div className="relative z-10 max-w-3xl">
+              <span className="inline-block bg-white/20 text-blue-100 text-[10px] md:text-xs px-2.5 py-1 rounded-full font-bold uppercase tracking-wider mb-3">
+                XXXVII Aniversario (1989-2026)
+              </span>
+              <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-4 drop-shadow-sm">
+                Benvido á Asociación Galega de Xadrecistas
+              </h1>
+              <p className="text-sm md:text-base text-blue-100 mb-6 max-w-2xl leading-relaxed">
+                Promovemos o xadrez e os xogos de mesa en Galicia. Únete á nosa comunidade de xadrecistas, inscríbete como socio para apoiar as nosas actividades ou xoga connosco en liña nos nosos torneos.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link 
+                  to="/alta-socio" 
+                  className="inline-flex items-center justify-center px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98] text-sm gap-1.5"
+                >
+                  <span>Faite socio</span>
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
+                <Link 
+                  to="/registro-lichess" 
+                  className="inline-flex items-center justify-center px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg border border-white/30 backdrop-blur-sm transition-all hover:scale-[1.02] active:scale-[0.98] text-sm gap-1.5"
+                >
+                  <span>Inscrición AGAX Aberto en Lichess</span>
+                  <span className="text-[10px] bg-blue-500/80 px-1.5 py-0.5 rounded">Lichess</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <div className="blog-header">
             <div className="search-filters">
               <div className="search-box">
