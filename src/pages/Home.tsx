@@ -236,7 +236,7 @@ export const Home: React.FC = () => {
                   to="/registro-lichess" 
                   className="inline-flex items-center justify-center px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg border border-white/30 backdrop-blur-sm transition-all hover:scale-102 active:scale-98 text-sm gap-1.5"
                 >
-                  <span>Xoga en liña</span>
+                  <span>Inscrición AGAX Aberto en Lichess</span>
                   <span className="text-[10px] bg-blue-500/80 px-1.5 py-0.5 rounded">Lichess</span>
                 </Link>
               </div>

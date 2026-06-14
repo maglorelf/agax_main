@@ -459,10 +459,6 @@ a:hover {
     text-align: center;
 }
 
-.hidden {
-    display: none !important;
-}
-
 /* Loading State */
 .loading {
     display: flex;

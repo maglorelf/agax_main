@@ -51,19 +51,6 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
             {/* Desktop Right Banner / Internal Navigation */}
             <div className="hidden md:flex items-center space-x-4">
-              <div className="hidden lg:block">
-                <img 
-                  src="/imax/agax.gif" 
-                  alt="Banner AGAX" 
-                  className="h-10 md:h-12 w-auto filter drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3)) rounded" 
-                />
-              </div>
-              <nav className="flex space-x-2 text-xs md:text-sm font-medium">
-                <Link to="/" className={`px-2.5 py-1.5 rounded hover:bg-white/10 transition-colors ${location.pathname === '/' ? 'bg-white/15 text-white' : 'text-gray-100'}`}>Inicio</Link>
-                <Link to="/directiva" className={`px-2.5 py-1.5 rounded hover:bg-white/10 transition-colors ${location.pathname === '/directiva' ? 'bg-white/15 text-white' : 'text-gray-100'}`}>Directiva</Link>
-                <Link to="/registro-lichess" className={`px-2.5 py-1.5 rounded hover:bg-white/10 transition-colors ${location.pathname === '/registro-lichess' ? 'bg-white/15 text-white' : 'text-gray-100'}`}>Inscrición Lichess</Link>
-                <Link to="/alta-socio" className={`px-3 py-1.5 rounded bg-green-600 hover:bg-green-700 text-white font-bold transition-all`}>Faite socio</Link>
-              </nav>
             </div>
 
             {/* Mobile Hamburger Button - Hidden on Desktop */}
@@ -128,7 +115,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 onClick={closeMenu}
                 className={`block px-3 py-2 rounded text-base font-medium ${location.pathname === '/registro-lichess' ? 'bg-white/15 text-white' : 'text-gray-200 hover:bg-white/10'}`}
               >
-                Inscrición Equipo Online
+                Inscrición AGAX Aberto en Lichess
               </Link>
 
               <div className="border-t border-white/10 my-2 pt-2"></div>
